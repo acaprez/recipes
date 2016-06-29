@@ -1,0 +1,37 @@
+package:
+  name: smalt
+  version: '0.7.6'
+
+source:
+  fn: smalt-0.7.6-static.tar.gz
+  url: http://downloads.sourceforge.net/project/smalt/smalt-0.7.6-static.tar.gz
+  md5: 57ed011836fda8fb5e34604dd1858b5e
+
+build:
+  number: 0
+
+requirements:
+  build:
+    - gcc # [linux]
+    - llvm  # [osx]
+    - pkg-config # [osx]
+    - bambamc
+    - python
+    - zlib
+    - samtools
+
+  run:
+    - libgcc # [linux]
+    - bambamc
+    - zlib
+    - samtools
+
+test:
+ commands:
+    - smalt version > /dev/null
+    
+about:
+  home: https://sourceforge.net/projects/smalt/
+  license: GPL
+  license_file: COPYING
+  summary: SMALT aligns DNA sequencing reads with a reference genome.
