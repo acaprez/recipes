@@ -27,6 +27,8 @@ requirements:
     - bioconductor-rsamtools
     - bioconductor-limma
     - bioconductor-bsgenome.hsapiens.ucsc.hg19
+    - gcc # [linux]
+    - llvm # [osx]
 
   run:
     - r
@@ -40,6 +42,7 @@ requirements:
     - bioconductor-rsamtools
     - bioconductor-limma
     - bioconductor-bsgenome.hsapiens.ucsc.hg19
+    - libgcc # [linux]
 
 test:
   commands:
